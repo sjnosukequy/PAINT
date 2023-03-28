@@ -1,5 +1,5 @@
 # PAINT
-A C# winform app. <br />
+A C# winform app <br />
 Draw with with e.graphics <br />
 ## OPERATIONS
 <kbd> [ </kbd> : to increase size <br />
