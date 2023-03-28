@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.Devices;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.ConstrainedExecution;
@@ -13,7 +14,7 @@ using System.Threading.Tasks;
   DashDotDot = 4,
 */
 
-public class Line
+public class Line : Shape
 {
     private List<Line> Gshapes;
     private PointF p1;
@@ -308,5 +309,38 @@ public class Line
             }
         }
        
+    }
+    public virtual void DrawBox(Panel a, bool flag)
+    {
+        if (flag)
+        {
+            float x = MathF.Min(P1.X, P2.X);
+            float y = MathF.Min(P1.Y, P2.Y);
+            float height = MathF.Abs(P2.Y - P1.Y);
+            float width = MathF.Abs(P2.X - P1.X);
+            if (width == 0)
+            {
+                width = this.Width;
+                x -= 5;
+            }
+            else if (height == 0)
+            {
+                height = this.Width;
+                y -= 5;
+            }
+            RectangleF box = new RectangleF(x, y, width, height);
+            if (this.Color != Color.Red)
+            {
+                Graphics gp = a.CreateGraphics();
+                Pen tmp = new Pen(Color.Red, 10);
+                gp.DrawRectangle(tmp, Rectangle.Round(box));
+            }
+            else
+            {
+                Graphics gp = a.CreateGraphics();
+                Pen tmp = new Pen(Color.Black, 10);
+                gp.DrawRectangle(tmp, Rectangle.Round(box));
+            }
+        }
     }
 }

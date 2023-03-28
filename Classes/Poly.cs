@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.Devices;
+using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Drawing.Drawing2D;
@@ -262,6 +263,52 @@ public class Poly : Line
                 Console.WriteLine("Dx1 0-" + 1 + ": " + dx1);
                 PointF p2 = new PointF(this.Points[1].X - 3, this.Points[1].Y + (3 * dx1));
                 Points[1] = p2;
+            }
+        }
+    }
+    public override void DrawBox(Panel a, bool flag)
+    {
+        if(flag)
+        {
+            int len = Points.Count();
+            float x = P1.X;
+            float y = P1.Y;
+            float maxw = 0;
+            float maxh = 0;
+            //Finding the first point
+            for (int i = 0; i < len; i++)
+            {
+                if (Points[i].Y < y)
+                {
+                    y = Points[i].Y;
+                }
+                if (Points[i].X < x)
+                {
+                    x = Points[i].X;
+                }
+            }
+            //finding the limits 
+            for (int i = 0; i < len; i++)
+            {
+                if (Points[i].X > maxw)
+                    maxw = Points[i].X;
+                if (Points[i].Y > maxh)
+                    maxh = Points[i].Y;
+            }
+            maxh -= y;
+            maxw -= x;
+            RectangleF box = new RectangleF(x, y, maxw, maxh);
+            if (this.Color != Color.Red)
+            {
+                Graphics gp = a.CreateGraphics();
+                Pen tmp = new Pen(Color.Red, 10);
+                gp.DrawRectangle(tmp, Rectangle.Round(box));
+            }
+            else
+            {
+                Graphics gp = a.CreateGraphics();
+                Pen tmp = new Pen(Color.Black, 10);
+                gp.DrawRectangle(tmp, Rectangle.Round(box));
             }
         }
     }

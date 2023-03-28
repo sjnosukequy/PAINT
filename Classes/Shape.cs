@@ -78,8 +78,9 @@ interface Shape
     public void Paint(PaintEventArgs e);
     public bool CContains(Panel a, MouseEventArgs e);
     public void SetPivot();        //Set Pivot,  At i = 0: we save P1,  At i = 1: we save P2
-    public Rectangle GetContains();
+    public RectangleF GetContains();
     public void SizeDW();
     public void SizeUP();
+    public void DrawBox(Panel a, bool flag);
 
 }

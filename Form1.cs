@@ -91,9 +91,12 @@ namespace Paint
                     foreach (int i in SEindex)
                         Shapes[i].Color = Mycolor;
                     panel2.Refresh();
+                    foreach (int i in SEindex)
+                        Shapes[i].DrawBox(panel2, true);
                 }
             }
             this.button6.Text = Convert.ToString(Mycolor);
+            this.label2.Focus();
         }
         private void txt2Wid(object sender, PreviewKeyDownEventArgs e)
         {
@@ -111,54 +114,43 @@ namespace Paint
                         foreach (int i in SEindex)
                             Shapes[i].Width = width;
                         panel2.Refresh();
+                        foreach (int i in SEindex)
+                            Shapes[i].DrawBox(panel2, true);
                     }
                     this.label2.Focus();
                 }
                 else
                     MessageBox.Show("Hay nhap mot so nguyen lon hon 0");
+                this.label2.Focus();
             }
         }
-        private void CBchoice(object sender,MouseEventArgs e)
+        private void CBchoice(object sender,EventArgs e)
         {
-            if (start == false)
+            if (Convert.ToString(this.comboBox1.SelectedItem) == "Solid")
+                style = 0;
+            else if (Convert.ToString(this.comboBox1.SelectedItem) == "Dash")
+                style = 1;
+            else if (Convert.ToString(this.comboBox1.SelectedItem) == "Dot")
+                style = 2;
+            else if (Convert.ToString(this.comboBox1.SelectedItem) == "DashDot")
+                style = 3;
+            else if (Convert.ToString(this.comboBox1.SelectedItem) == "DashDotDot")
+                style = 4;
+
+            if(start == true)
             {
-                if (Convert.ToString(this.comboBox1.SelectedItem) == "Solid")
-                    style = 0;
-                else if (Convert.ToString(this.comboBox1.SelectedItem) == "Dash")
-                    style = 1;
-                else if (Convert.ToString(this.comboBox1.SelectedItem) == "Dot")
-                    style = 2;
-                else if (Convert.ToString(this.comboBox1.SelectedItem) == "DashDot")
-                    style = 3;
-                else if (Convert.ToString(this.comboBox1.SelectedItem) == "DashDotDot")
-                    style = 4;
+                Shapes[Shapes.Count() - 1].Style = style;
             }
-            else
+            if (Selected == true)
             {
-                if (Convert.ToString(this.comboBox1.SelectedItem) == "Solid")
-                    style = 0;
-                else if (Convert.ToString(this.comboBox1.SelectedItem) == "Dash")
-                    style = 1;
-                else if (Convert.ToString(this.comboBox1.SelectedItem) == "Dot")
-                    style = 2;
-                else if (Convert.ToString(this.comboBox1.SelectedItem) == "DashDot")
-                    style = 3;
-                else if (Convert.ToString(this.comboBox1.SelectedItem) == "DashDotDot")
-                    style = 4;
-                switch(style)
-                {
-                    case 0:
-                        Shapes[Shapes.Count() - 1].Style = 0 ; break;
-                    case 1:
-                        Shapes[Shapes.Count() - 1].Style = 1; break;
-                    case 2:
-                        Shapes[Shapes.Count() - 1].Style = 2; break;
-                    case 3:
-                        Shapes[Shapes.Count() - 1].Style = 3; break;
-                    case 4:
-                        Shapes[Shapes.Count() - 1].Style = 4; break;
-                }
+                foreach (int i in SEindex)
+                    Shapes[i].Style = style;
+                panel2.Refresh();
+                foreach (int i in SEindex)
+                    Shapes[i].DrawBox(panel2, true);
             }
+            this.label2.Focus();
+
         }
 
         //Panel
@@ -205,6 +197,8 @@ namespace Paint
                     string temp = Convert.ToString(SEindex.Count());
                     this.label2.Text = "Select Mode: ON\n     Selected: " + temp;
                     Selected = true;
+                    foreach (int i in SEindex)
+                        Shapes[i].DrawBox(panel2, true);
                     Label_SEE(1);
                 }
                 else
@@ -339,6 +333,7 @@ namespace Paint
                     this.panel2.Refresh();
                 }
             }
+            this.Cordinate.Text = Convert.ToString(e.Location);
         }
         private void MUUP(object sender, MouseEventArgs e)
         { 
@@ -434,7 +429,7 @@ namespace Paint
                         }
                         break;
                     }
-                case Keys.Back:
+                case Keys.Delete:
                     {
                         if(Selected == true)
                         {
@@ -543,8 +538,9 @@ namespace Paint
         }
 
         //Button click
-        private void button1_Click(object sender, EventArgs e)
+        private void Line_BTT_Click(object sender, EventArgs e)
         {
+            RemNULL();
             Line a = new Line(Mycolor, width, style);
             Shapes.Add(a);
             start = true;
@@ -554,8 +550,9 @@ namespace Paint
             SEindex.Clear();
             this.label2.Focus();
         }
-        private void button2_Click(object sender, EventArgs e)
+        private void Ellipse_BTT_Click(object sender, EventArgs e)
         {
+            RemNULL();
             Ellipse a = new Ellipse(Mycolor,width, style);
             Shapes.Add(a);
             start = true;
@@ -565,8 +562,9 @@ namespace Paint
             SEindex.Clear();
             this.label2.Focus();
         }
-        private void button3_Click(object sender, EventArgs e)
+        private void EllipseF_BTT_Click(object sender, EventArgs e)
         {
+            RemNULL();
             FEllipse a = new FEllipse(Mycolor, width, style);
             Shapes.Add(a);
             start = true;
@@ -576,8 +574,9 @@ namespace Paint
             SEindex.Clear();
             this.label2.Focus();
         }
-        private void button4_Click(object sender, EventArgs e)
+        private void Rec_BTT_Click(object sender, EventArgs e)
         {
+            RemNULL();
             Rec a = new Rec(Mycolor, width, style);
             Shapes.Add(a);
             start = true;
@@ -587,8 +586,9 @@ namespace Paint
             SEindex.Clear();
             this.label2.Focus();
         }
-        private void button5_Click(object sender, EventArgs e)
+        private void RecF_BTT_Click(object sender, EventArgs e)
         {
+            RemNULL();
             FRec a = new FRec(Mycolor, width, style);
             Shapes.Add(a);
             start = true;
@@ -598,8 +598,9 @@ namespace Paint
             SEindex.Clear();
             this.label2.Focus();
         }
-        private void button12_Click(object sender, EventArgs e)
+        private void Circle_BTT_Click(object sender, EventArgs e)
         {
+            RemNULL();
             Circle a = new Circle(Mycolor, width, style);
             Shapes.Add(a);
             start = true;
@@ -609,8 +610,9 @@ namespace Paint
             SEindex.Clear();
             this.label2.Focus();
         }
-        private void button11_Click(object sender, EventArgs e)
+        private void CircleF_BTT_Click(object sender, EventArgs e)
         {
+            RemNULL();
             FCircle a = new FCircle(Mycolor, width, style);
             Shapes.Add(a);
             start = true;
@@ -620,8 +622,9 @@ namespace Paint
             SEindex.Clear();
             this.label2.Focus();
         }
-        private void button10_Click(object sender, EventArgs e)
+        private void Arc_BTT_Click(object sender, EventArgs e)
         {
+            RemNULL();
             Arc a = new Arc(Mycolor, width, style);
             Shapes.Add(a);
             start = true;
@@ -631,9 +634,10 @@ namespace Paint
             SEindex.Clear();
             this.label2.Focus();
         }
-        private void button9_Click(object sender, EventArgs e)
+        private void Poly_BTT_Click(object sender, EventArgs e)
         {
             IsPoly = true;
+            RemNULL();
             Poly a = new Poly(Mycolor, width, style);
             Shapes.Add(a);
             start = true;
@@ -642,9 +646,10 @@ namespace Paint
             SEindex.Clear();
             this.label2.Focus();
         }
-        private void button8_Click(object sender, EventArgs e)
+        private void PolyF_BTT_Click(object sender, EventArgs e)
         {
             IsPoly = true;
+            RemNULL();
             FPoly a = new FPoly(Mycolor, width, style);
             Shapes.Add(a);
             start = true;
@@ -668,7 +673,13 @@ namespace Paint
                 this.SizeDWLabel.Visible = false;
             }
         }
-
+        private void RemNULL()
+        {
+            int len = Shapes.Count();
+            if (len > 0)
+                if (Shapes[len - 1].P1.IsEmpty)
+                    Shapes.RemoveAt(len - 1);
+        }
         //Size Change
         private void SZChange(object sender, EventArgs e)
         {
@@ -676,8 +687,8 @@ namespace Paint
             {
                 float size1 = this.Size.Width / firstWidth;
                 float size2 = this.Size.Height / firstHeight;
-
-                SizeF scale = new SizeF(size1, size2);
+                SizeF scale = new SizeF();
+                scale = new SizeF(size1 , size2 );
                 firstWidth = this.Size.Width;
                 firstHeight = this.Size.Height;
 

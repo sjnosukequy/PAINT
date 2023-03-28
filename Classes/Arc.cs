@@ -126,4 +126,28 @@ public class Arc : Line
         this.P1 = T1;
         this.Width += 1;
     }
+    public override void DrawBox(Panel a, bool flag)
+    {
+        if(flag)
+        {
+            int space = Width * 10;
+            float x = P1.X - space;
+            float y = P1.Y - space / 2;
+            int height = space;
+            int width = space;
+            RectangleF box = new RectangleF(x, y, width, height);
+            if (this.Color != Color.Red)
+            {
+                Graphics gp = a.CreateGraphics();
+                Pen tmp = new Pen(Color.Red, 10);
+                gp.DrawRectangle(tmp, Rectangle.Round(box));
+            }
+            else
+            {
+                Graphics gp = a.CreateGraphics();
+                Pen tmp = new Pen(Color.Black, 10);
+                gp.DrawRectangle(tmp, Rectangle.Round(box));
+            }
+        }
+    }
 }

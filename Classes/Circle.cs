@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.VisualBasic.Devices;
 
 public class Circle : Line
 {
@@ -84,5 +85,29 @@ public class Circle : Line
         float width = 2 * radius;
         RectangleF box = new RectangleF(x, y, width, height);
         return box;
+    }
+    public override void DrawBox(Panel a, bool flag)
+    {
+        if(flag)
+        {
+            float radius = (float)Math.Sqrt(Math.Pow(P1.X - P2.X, 2) + Math.Pow(P1.Y - P2.Y, 2));
+            float x = P1.X - radius;
+            float y = P1.Y - radius;
+            float height = 2 * radius;
+            float width = 2 * radius;
+            RectangleF box = new RectangleF(x, y, width, height);
+            if (this.Color != Color.Red)
+            {
+                Graphics gp = a.CreateGraphics();
+                Pen tmp = new Pen(Color.Red, 10);
+                gp.DrawRectangle(tmp, Rectangle.Round(box));
+            }
+            else
+            {
+                Graphics gp = a.CreateGraphics();
+                Pen tmp = new Pen(Color.Black, 10);
+                gp.DrawRectangle(tmp, Rectangle.Round(box));
+            }
+        }
     }
 }
