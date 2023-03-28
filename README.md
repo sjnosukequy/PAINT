@@ -1,9 +1,9 @@
 # PAINT
-A C# winform app.
-Draw with with e.graphics
+A C# winform app. <br />
+Draw with with e.graphics <br />
 #OPERATIONS
-<kbd> [ </kbd> : to increase size
-<kbd> ] </kbd> : to decrease size
-<kbd> G </kbd> : to group objects
-<kbd> U </kbd> : to ungroup objects
-<kbd> esc </kbd> : to cancel operations
+<kbd> [ </kbd> : to increase size <br />
+<kbd> ] </kbd> : to decrease size <br />
+<kbd> G </kbd> : to group objects <br />
+<kbd> U </kbd> : to ungroup objects <br />
+<kbd> esc </kbd> : to cancel operations <br />
