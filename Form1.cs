@@ -60,7 +60,10 @@ namespace Paint
         private void txt2_Recv(object sender, MouseEventArgs e)
         {
             if (textBox2.Text == "")
+            {
                 this.textBox2.Text = "Width";
+                this.label2.Focus();
+            }
             //check
             if(textBox2.Text != "Width")
             {
@@ -68,12 +71,18 @@ namespace Paint
                 if (n <= 0)
                     isNumeric = false;
                 if (isNumeric)
+                {
                     width = Convert.ToInt32(this.textBox2.Text);
+                    this.label2.Focus();
+                }
                 else
-                    MessageBox.Show("Hay nhap mot so nguyen lon hon 0");
+                { 
+                    MessageBox.Show("Hay nhap mot so nguyen lon hon 0", "Luu y !!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    textBox2.Focus();
+                    textBox2.Select(textBox2.Text.Length, 0);
+                }
+               
             }
-            textBox2.Focus();
-            textBox2.Select(textBox2.Text.Length, 0);
         }
 
         //Brush button Function
@@ -120,8 +129,11 @@ namespace Paint
                     this.label2.Focus();
                 }
                 else
-                    MessageBox.Show("Hay nhap mot so nguyen lon hon 0");
-                this.label2.Focus();
+                {
+                    MessageBox.Show("Hay nhap mot so nguyen lon hon 0", "Luu y !!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    textBox2.Focus();
+                    textBox2.Select(textBox2.Text.Length, 0);
+                }
             }
         }
         private void CBchoice(object sender,EventArgs e)
@@ -481,7 +493,7 @@ namespace Paint
                                     }
                                 }
                                 else
-                                    MessageBox.Show("Ungroup First");
+                                    MessageBox.Show("Ungroup First", "Luu y !!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             } 
                         }
                         SEindex.Clear();
@@ -502,7 +514,7 @@ namespace Paint
                     {
                         if (Selected == true)
                         {
-                            Console.WriteLine("Group");
+                            Console.WriteLine("UNGroup");
                             bool flag = true;
                             if (SEindex.Count() > 1)
                                 flag = false;
@@ -516,7 +528,7 @@ namespace Paint
                                 Shapes.RemoveAt(SEindex[0]);
                             }
                             else
-                                MessageBox.Show("Cannot ungroup Ungrouped objetcs");
+                                MessageBox.Show("Cannot ungroup Ungrouped objetcs", "Error !!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                         }
                         SEindex.Clear();
