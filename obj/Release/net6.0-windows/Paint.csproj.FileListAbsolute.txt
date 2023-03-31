@@ -15,3 +15,20 @@ C:\Users\ASUS\Documents\github paint\PAINT\obj\Release\net6.0-windows\refint\Pai
 C:\Users\ASUS\Documents\github paint\PAINT\obj\Release\net6.0-windows\Paint.pdb
 C:\Users\ASUS\Documents\github paint\PAINT\obj\Release\net6.0-windows\Paint.genruntimeconfig.cache
 C:\Users\ASUS\Documents\github paint\PAINT\obj\Release\net6.0-windows\ref\Paint.dll
+D:\project hoc\Win Programing\MIDTERM\Bai 1\Paint\bin\Release\net6.0-windows\Paint.exe
+D:\project hoc\Win Programing\MIDTERM\Bai 1\Paint\bin\Release\net6.0-windows\Paint.deps.json
+D:\project hoc\Win Programing\MIDTERM\Bai 1\Paint\bin\Release\net6.0-windows\Paint.runtimeconfig.json
+D:\project hoc\Win Programing\MIDTERM\Bai 1\Paint\bin\Release\net6.0-windows\Paint.dll
+D:\project hoc\Win Programing\MIDTERM\Bai 1\Paint\bin\Release\net6.0-windows\Paint.pdb
+D:\project hoc\Win Programing\MIDTERM\Bai 1\Paint\obj\Release\net6.0-windows\Paint.csproj.AssemblyReference.cache
+D:\project hoc\Win Programing\MIDTERM\Bai 1\Paint\obj\Release\net6.0-windows\Paint.Form1.resources
+D:\project hoc\Win Programing\MIDTERM\Bai 1\Paint\obj\Release\net6.0-windows\Paint.csproj.GenerateResource.cache
+D:\project hoc\Win Programing\MIDTERM\Bai 1\Paint\obj\Release\net6.0-windows\Paint.GeneratedMSBuildEditorConfig.editorconfig
+D:\project hoc\Win Programing\MIDTERM\Bai 1\Paint\obj\Release\net6.0-windows\Paint.AssemblyInfoInputs.cache
+D:\project hoc\Win Programing\MIDTERM\Bai 1\Paint\obj\Release\net6.0-windows\Paint.AssemblyInfo.cs
+D:\project hoc\Win Programing\MIDTERM\Bai 1\Paint\obj\Release\net6.0-windows\Paint.csproj.CoreCompileInputs.cache
+D:\project hoc\Win Programing\MIDTERM\Bai 1\Paint\obj\Release\net6.0-windows\Paint.dll
+D:\project hoc\Win Programing\MIDTERM\Bai 1\Paint\obj\Release\net6.0-windows\refint\Paint.dll
+D:\project hoc\Win Programing\MIDTERM\Bai 1\Paint\obj\Release\net6.0-windows\Paint.pdb
+D:\project hoc\Win Programing\MIDTERM\Bai 1\Paint\obj\Release\net6.0-windows\Paint.genruntimeconfig.cache
+D:\project hoc\Win Programing\MIDTERM\Bai 1\Paint\obj\Release\net6.0-windows\ref\Paint.dll

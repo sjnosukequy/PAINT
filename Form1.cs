@@ -27,7 +27,7 @@ namespace Paint
         bool IsPoly = false;
 
         //shapes
-        List<Line> Shapes = new List<Line>();
+        List<Shape> Shapes = new List<Shape>();
 
         //WINDOW HEIGHT/WIDTH
         float firstWidth;
@@ -177,7 +177,7 @@ namespace Paint
                 if (SEindex.Count > 1)
                     for (int i = 0; i < SEindex.Count();i++)
                     {
-                        Line temp = Shapes[SEindex[i]];
+                        Shape temp = Shapes[SEindex[i]];
                         for (int k = i + 1; k < SEindex.Count(); k++)
                             if (Shapes[SEindex[k]] == temp)
                             {
@@ -223,6 +223,7 @@ namespace Paint
                 this.SizeUPLabel.ForeColor = System.Drawing.Color.Black;
                 this.SizeUPLabel.Font = new System.Drawing.Font(this.SizeUPLabel.Font, System.Drawing.FontStyle.Regular);
                 this.SizeDWLabel.Font = new System.Drawing.Font(this.SizeUPLabel.Font, System.Drawing.FontStyle.Regular);
+                this.panel2.Refresh();
             }
             else if (IsPoly == true)
             {
@@ -352,6 +353,8 @@ namespace Paint
             //Selected = false;
             this.label2.Focus();
         }
+
+        //key pressed
         private void label2_key(object sender, PreviewKeyDownEventArgs e)
         {
             switch (e.KeyCode)
@@ -459,25 +462,27 @@ namespace Paint
                     {
                         if(Selected == true)
                         {
-                            Console.WriteLine("Group");
-                            SEindex.Sort();
-                            SEindex.Reverse();
-                            bool flag = true;
-                            foreach (int i in SEindex)
-                                if (Shapes[i].Name.Equals("Combine"))
-                                    flag = false;
-                            if (flag == true)
+                            if(SEindex.Count() > 1)
                             {
-                                Combine a = new Combine(Mycolor, width, style, Shapes, SEindex);
-                                Shapes.Add(a);
+                                Console.WriteLine("Group");
+                                SEindex.Sort();
+                                SEindex.Reverse();
+                                bool flag = true;
                                 foreach (int i in SEindex)
+                                    if (Shapes[i].Name.Equals("Combine"))
+                                        flag = false;
+                                if (flag == true)
                                 {
-                                    Shapes.RemoveAt(i);
+                                    Combine a = new Combine(Mycolor, width, style, Shapes, SEindex);
+                                    Shapes.Add(a);
+                                    foreach (int i in SEindex)
+                                    {
+                                        Shapes.RemoveAt(i);
+                                    }
                                 }
-                            }
-                            else
-                                MessageBox.Show("Ungroup First");
-
+                                else
+                                    MessageBox.Show("Ungroup First");
+                            } 
                         }
                         SEindex.Clear();
                         Iselect = false;
@@ -530,11 +535,14 @@ namespace Paint
                     }
             }
         }
+
+        //Paint
         private void paint(object sender, PaintEventArgs e)
         {
             int ls = Shapes.Count();
             for (int i = 0; i < ls; i++)
-                Shapes[i].Paint(e);
+                try { Shapes[i].Paint(e); }
+                catch(Exception ex) { }
         }
 
         //Button click

@@ -47,6 +47,7 @@ public class FCircle : Line
         }
         float radius = (float)Math.Sqrt(Math.Pow(P1.X - P2.X, 2) + Math.Pow(P1.Y - P2.Y, 2));
         // Then to rotate, prepending rotation matrix.
+        e.Graphics.DrawEllipse(Pen, P1.X - radius, P1.Y - radius, 2 * radius, 2 * radius);
         e.Graphics.FillEllipse(Brush, P1.X - radius, P1.Y - radius, 2 * radius, 2 * radius);
     }
     public override bool CContains(Panel a, MouseEventArgs e)

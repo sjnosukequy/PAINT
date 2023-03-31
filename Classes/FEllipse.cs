@@ -47,6 +47,7 @@ public class FEllipse : Line
         float height = MathF.Abs(P2.Y - P1.Y);
         float width = MathF.Abs(P2.X - P1.X);
 
+        e.Graphics.DrawEllipse(Pen, x, y, width, height);
         e.Graphics.FillEllipse(Brush, x, y, width, height);
     }
 }

@@ -14,10 +14,15 @@ using System.Xml.Linq;
   DashDotDot = 4,
 */
 
-interface Shape
+public interface Shape
 {
     //Varible Declaration;
-    public List<Line> gshapes
+    public float Dx
+    {
+        get;
+        set;
+    }
+    public List<Shape> gshapes
     {
         get;
         set;

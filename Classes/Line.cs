@@ -16,25 +16,25 @@ using System.Threading.Tasks;
 
 public class Line : Shape
 {
-    private List<Line> Gshapes;
-    private PointF p1;
-    private PointF p2;
-    private int width;
-    private Color color;
-    private Pen pen;
-    private SolidBrush brush;
-    private int style;
-    private List<PointF> points;
-    private List<PointF> pointM;
-    private string name;
-    private float dx;
+    //private List<Line> Gshapes;
+    //private PointF p1;
+    //private PointF p2;
+    //private int width;
+    //private Color color;
+    //private Pen pen;
+    //private SolidBrush brush;
+    //private int style;
+    //private List<PointF> points;
+    //private List<PointF> pointM;
+    //private string name;
+    //private float dx;
     //
     public Line(Color color, int width, int style)
     {
-        pen = new Pen(color, width);
-        brush = new SolidBrush(color);
-        this.color = color;
-        this.width = width;
+        Pen = new Pen(color, width);
+        Brush = new SolidBrush(color);
+        this.Color = color;
+        this.Width = width;
         this.Style = style;
         PointM = new List<PointF>();
         Points = new List<PointF>();
@@ -43,70 +43,70 @@ public class Line : Shape
     }
     public float Dx
     {
-        get { return dx; }
-        set { dx = value; }
+        get;
+        set;
     }
-    public List<Line> gshapes
+    public List<Shape> gshapes
     {
-        get { return Gshapes; }
-        set { Gshapes = value; }
+        get;
+        set;
     }
     public PointF P1
     {
-        get { return p1; }
-        set { p1 = value; }
+        get;
+        set;
     }
     public PointF P2
     {
-        get { return p2; }
-        set { p2 = value; }
+        get;
+        set;
     }
     public int Width
     {
-        get { return width; }
-        set { width = value; }
+        get;
+        set;
     }
     public Color Color
     {
-        get { return color; }
-        set { color = value; }
+        get;
+        set;
     }
     public Pen Pen
     {
 
-        get { return pen; }
-        set { pen = value; }
+        get;
+        set;
     }
     public SolidBrush Brush
     {
-        get { return brush; }
-        set { brush = value; }
+        get;
+        set;
     }
     public int Style
     {
-        get { return style; }
-        set { style = value; }
+        get;
+        set;
     }
     public List<PointF> Points
     {
-        get { return points; }
-        set { points = value; }
+        get;
+        set;
     }
     public List<PointF> PointM
     {
-        get { return pointM; }
-        set { pointM = value; }
+        get;
+        set;
     }
     public string Name
     {
-        get { return name; }
-        set { name = value; }
+        get;
+        set;
     }
     //Functions
     public virtual void Paint(PaintEventArgs e)
     {
-        pen = new Pen(color, width);
-        brush = new SolidBrush(color);
+        Pen = new Pen(Color, Width);
+        Brush = new SolidBrush(Color);
         switch (Style)
         {
             case 0:
@@ -135,7 +135,7 @@ public class Line : Shape
                     break;
                 }
         }
-        e.Graphics.DrawLine(pen, P1, P2);
+        e.Graphics.DrawLine(Pen, P1, P2);
     }
     public virtual bool CContains(Panel a,MouseEventArgs e)
     {

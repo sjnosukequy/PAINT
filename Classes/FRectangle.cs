@@ -47,6 +47,7 @@ public class FRec : Line
         float y = MathF.Min(P1.Y, P2.Y);
         float height = MathF.Abs(P2.Y - P1.Y);
         float width = MathF.Abs(P2.X - P1.X);
+        e.Graphics.DrawRectangle(Pen, x, y, width, height);
         e.Graphics.FillRectangle(Brush, x, y, width, height);
     }
 }

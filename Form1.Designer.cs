@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.SizeDWLabel = new System.Windows.Forms.Label();
@@ -145,6 +146,7 @@
             this.comboBox1.Size = new System.Drawing.Size(133, 28);
             this.comboBox1.TabIndex = 16;
             this.comboBox1.TabStop = false;
+            this.comboBox1.SelectedIndex = 0;
             this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.CBchoice);
             // 
             // button6
@@ -306,7 +308,9 @@
             // Cordinate
             // 
             this.Cordinate.AutoSize = true;
-            this.Cordinate.Location = new System.Drawing.Point(974, 684);
+            this.Cordinate.BackColor = System.Drawing.Color.Transparent;
+            this.Cordinate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Cordinate.Location = new System.Drawing.Point(964, 684);
             this.Cordinate.Name = "Cordinate";
             this.Cordinate.Size = new System.Drawing.Size(50, 20);
             this.Cordinate.TabIndex = 0;
@@ -319,6 +323,7 @@
             this.ClientSize = new System.Drawing.Size(1315, 707);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
