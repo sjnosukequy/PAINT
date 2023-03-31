@@ -33,7 +33,6 @@ namespace Paint
         float firstWidth;
         float firstHeight;
 
-
         //FORM
 
         public Form1()
