@@ -1,0 +1,11 @@
+D:\project hoc\Win Programing\MIDTERM\new\Paint\obj\Debug\Paint.csproj.AssemblyReference.cache
+D:\project hoc\Win Programing\MIDTERM\new\Paint\obj\Debug\Paint.csproj.SuggestedBindingRedirects.cache
+D:\project hoc\Win Programing\MIDTERM\new\Paint\obj\Debug\Paint.Properties.Resources.resources
+D:\project hoc\Win Programing\MIDTERM\new\Paint\obj\Debug\Paint.csproj.GenerateResource.cache
+D:\project hoc\Win Programing\MIDTERM\new\Paint\obj\Debug\Paint.csproj.CoreCompileInputs.cache
+D:\project hoc\Win Programing\MIDTERM\new\Paint\bin\Debug\Paint.exe.config
+D:\project hoc\Win Programing\MIDTERM\new\Paint\bin\Debug\Paint.exe
+D:\project hoc\Win Programing\MIDTERM\new\Paint\bin\Debug\Paint.pdb
+D:\project hoc\Win Programing\MIDTERM\new\Paint\obj\Debug\Paint.exe
+D:\project hoc\Win Programing\MIDTERM\new\Paint\obj\Debug\Paint.pdb
+D:\project hoc\Win Programing\MIDTERM\new\Paint\obj\Debug\Paint.Form1.resources

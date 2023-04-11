@@ -1,12 +1,13 @@
-﻿using Microsoft.VisualBasic.Devices;
-using System;
+﻿using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 public class Poly : Line
 {

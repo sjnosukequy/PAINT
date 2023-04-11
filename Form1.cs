@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -33,20 +35,21 @@ namespace Paint
         float firstWidth;
         float firstHeight;
 
+
         //FORM
 
         public Form1()
         {
             InitializeComponent();
+            this.ActiveControl = null;
+            firstWidth = this.Size.Width;
+            firstHeight = this.Size.Height;
             this.panel2.DBUFFER();
             Mycolor = Color.Black;
             width = 10;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.ActiveControl = null;
-            firstWidth = this.Size.Width;
-            firstHeight = this.Size.Height;
 
         }
 
@@ -59,10 +62,7 @@ namespace Paint
         private void txt2_Recv(object sender, MouseEventArgs e)
         {
             if (textBox2.Text == "")
-            {
                 this.textBox2.Text = "Width";
-                this.label2.Focus();
-            }
             //check
             if(textBox2.Text != "Width")
             {
@@ -70,18 +70,12 @@ namespace Paint
                 if (n <= 0)
                     isNumeric = false;
                 if (isNumeric)
-                {
                     width = Convert.ToInt32(this.textBox2.Text);
-                    this.label2.Focus();
-                }
                 else
-                { 
-                    MessageBox.Show("Hay nhap mot so nguyen lon hon 0", "Luu y !!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    textBox2.Focus();
-                    textBox2.Select(textBox2.Text.Length, 0);
-                }
-               
+                    MessageBox.Show("Hay nhap mot so nguyen lon hon 0");
             }
+            textBox2.Focus();
+            textBox2.Select(textBox2.Text.Length, 0);
         }
 
         //Brush button Function
@@ -128,11 +122,8 @@ namespace Paint
                     this.label2.Focus();
                 }
                 else
-                {
-                    MessageBox.Show("Hay nhap mot so nguyen lon hon 0", "Luu y !!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    textBox2.Focus();
-                    textBox2.Select(textBox2.Text.Length, 0);
-                }
+                    MessageBox.Show("Hay nhap mot so nguyen lon hon 0");
+                this.label2.Focus();
             }
         }
         private void CBchoice(object sender,EventArgs e)
@@ -492,7 +483,7 @@ namespace Paint
                                     }
                                 }
                                 else
-                                    MessageBox.Show("Ungroup First", "Luu y !!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    MessageBox.Show("Ungroup First");
                             } 
                         }
                         SEindex.Clear();
@@ -513,7 +504,7 @@ namespace Paint
                     {
                         if (Selected == true)
                         {
-                            Console.WriteLine("UNGroup");
+                            Console.WriteLine("Group");
                             bool flag = true;
                             if (SEindex.Count() > 1)
                                 flag = false;
@@ -527,7 +518,7 @@ namespace Paint
                                 Shapes.RemoveAt(SEindex[0]);
                             }
                             else
-                                MessageBox.Show("Cannot ungroup Ungrouped objetcs", "Error !!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Cannot ungroup Ungrouped objetcs");
 
                         }
                         SEindex.Clear();
@@ -696,33 +687,35 @@ namespace Paint
         {
             int len = Shapes.Count();
             if (len > 0)
-                if (Shapes[len - 1].P1.IsEmpty)
+                if (Shapes[len - 1].P1.IsEmpty || Shapes[len - 1].P2.IsEmpty)
                     Shapes.RemoveAt(len - 1);
         }
         //Size Change
         private void SZChange(object sender, EventArgs e)
         {
-            if(this.WindowState != FormWindowState.Minimized)
-            {
-                float size1 = this.Size.Width / firstWidth;
-                float size2 = this.Size.Height / firstHeight;
-                SizeF scale = new SizeF();
-                scale = new SizeF(size1 , size2 );
-                firstWidth = this.Size.Width;
-                firstHeight = this.Size.Height;
-
-                foreach (Control control in this.Controls)
+            if(firstHeight != 0 && firstWidth !=0)
+                if (this.WindowState != FormWindowState.Minimized)
                 {
-                    control.Font = new Font(control.Font.FontFamily, control.Font.Size * ((size1 + size2) / 2));
-                    control.Scale(scale);
-                }
-                foreach (Control control in this.panel1.Controls)
-                    if (control.GetType().FullName.Equals("System.Windows.Forms.Label"))
+
+                    float size1 = this.Size.Width / firstWidth;
+                    float size2 = this.Size.Height / firstHeight;
+                    SizeF scale = new SizeF();
+                    scale = new SizeF(size1, size2);
+
+                    firstWidth = this.Size.Width;
+                    firstHeight = this.Size.Height;
+                    foreach (Control control in this.Controls)
                     {
-                        control.Font = new Font(control.Font.FontFamily, control.Font.Size * size1);
-                        //control.Scale(scale);
+                        control.Font = new Font(control.Font.FontFamily, control.Font.Size * ((size1 + size2) / 2));
+                        control.Scale(scale);
                     }
-            }
+                    foreach (Control control in this.panel1.Controls)
+                        if (control.GetType().FullName.Equals("System.Windows.Forms.Label"))
+                        {
+                            control.Font = new Font(control.Font.FontFamily, control.Font.Size * size1);
+                            //control.Scale(scale);
+                        }
+                }
         }
 
     }

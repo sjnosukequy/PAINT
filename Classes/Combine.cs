@@ -1,11 +1,11 @@
-﻿using Microsoft.VisualBasic.Devices;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
 public class Combine : Line
@@ -20,6 +20,7 @@ public class Combine : Line
             foreach (int i in SEindex)
                 gshapes.Add(Shapes[i]);
             this.P1 = gshapes[0].P1;
+            this.P2 = gshapes[0].P2;
             Name = "Combine";
         }
     }

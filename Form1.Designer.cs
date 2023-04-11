@@ -1,4 +1,6 @@
-﻿namespace Paint
+﻿using System.Windows.Forms;
+
+namespace Paint
 {
     partial class Form1
     {
@@ -76,9 +78,10 @@
             this.panel1.Controls.Add(this.EllipseF_BTT);
             this.panel1.Controls.Add(this.EllipseL_BTT);
             this.panel1.Controls.Add(this.Line_BTT);
-            this.panel1.Location = new System.Drawing.Point(-6, -7);
+            this.panel1.Location = new System.Drawing.Point(-6, -6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(242, 714);
+            this.panel1.Size = new System.Drawing.Size(275, 630);
             this.panel1.TabIndex = 1;
             this.panel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt2_Recv);
             // 
@@ -86,8 +89,8 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(18, 540);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label3.Location = new System.Drawing.Point(45, 466);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(203, 161);
             this.label3.TabIndex = 20;
@@ -98,8 +101,8 @@
             // SizeDWLabel
             // 
             this.SizeDWLabel.AutoSize = true;
-            this.SizeDWLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SizeDWLabel.Location = new System.Drawing.Point(18, 478);
+            this.SizeDWLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.SizeDWLabel.Location = new System.Drawing.Point(45, 423);
             this.SizeDWLabel.Name = "SizeDWLabel";
             this.SizeDWLabel.Size = new System.Drawing.Size(76, 23);
             this.SizeDWLabel.TabIndex = 19;
@@ -109,8 +112,8 @@
             // SizeUPLabel
             // 
             this.SizeUPLabel.AutoSize = true;
-            this.SizeUPLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SizeUPLabel.Location = new System.Drawing.Point(131, 478);
+            this.SizeUPLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.SizeUPLabel.Location = new System.Drawing.Point(158, 423);
             this.SizeUPLabel.Name = "SizeUPLabel";
             this.SizeUPLabel.Size = new System.Drawing.Size(71, 23);
             this.SizeUPLabel.TabIndex = 18;
@@ -120,9 +123,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.label2.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label2.Location = new System.Drawing.Point(45, 430);
+            this.label2.Location = new System.Drawing.Point(62, 368);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(142, 23);
             this.label2.TabIndex = 17;
@@ -141,19 +144,21 @@
             "Dot",
             "DashDot",
             "DashDotDot"});
-            this.comboBox1.Location = new System.Drawing.Point(48, 390);
+            this.comboBox1.Location = new System.Drawing.Point(68, 336);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(133, 28);
+            this.comboBox1.Size = new System.Drawing.Size(133, 24);
             this.comboBox1.TabIndex = 16;
             this.comboBox1.TabStop = false;
-            this.comboBox1.SelectedIndex = 0;
+            this.comboBox1.Text = "Soild";
             this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.CBchoice);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(48, 297);
+            this.button6.Location = new System.Drawing.Point(68, 262);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(133, 54);
+            this.button6.Size = new System.Drawing.Size(136, 43);
             this.button6.TabIndex = 15;
             this.button6.TabStop = false;
             this.button6.Text = "Color";
@@ -162,9 +167,10 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(48, 357);
+            this.textBox2.Location = new System.Drawing.Point(68, 310);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(133, 27);
+            this.textBox2.Size = new System.Drawing.Size(133, 22);
             this.textBox2.TabIndex = 13;
             this.textBox2.TabStop = false;
             this.textBox2.Text = "Width";
@@ -175,8 +181,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(48, 254);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label1.Location = new System.Drawing.Point(68, 227);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(133, 28);
             this.label1.TabIndex = 11;
@@ -184,9 +190,10 @@
             // 
             // PolygonF_BTT
             // 
-            this.PolygonF_BTT.Location = new System.Drawing.Point(131, 181);
+            this.PolygonF_BTT.Location = new System.Drawing.Point(147, 178);
+            this.PolygonF_BTT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PolygonF_BTT.Name = "PolygonF_BTT";
-            this.PolygonF_BTT.Size = new System.Drawing.Size(94, 56);
+            this.PolygonF_BTT.Size = new System.Drawing.Size(109, 45);
             this.PolygonF_BTT.TabIndex = 4;
             this.PolygonF_BTT.TabStop = false;
             this.PolygonF_BTT.Text = "Filled polygon";
@@ -195,9 +202,10 @@
             // 
             // Polygon_BTT
             // 
-            this.Polygon_BTT.Location = new System.Drawing.Point(131, 146);
+            this.Polygon_BTT.Location = new System.Drawing.Point(151, 136);
+            this.Polygon_BTT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Polygon_BTT.Name = "Polygon_BTT";
-            this.Polygon_BTT.Size = new System.Drawing.Size(94, 29);
+            this.Polygon_BTT.Size = new System.Drawing.Size(105, 37);
             this.Polygon_BTT.TabIndex = 4;
             this.Polygon_BTT.TabStop = false;
             this.Polygon_BTT.Text = "Polygon";
@@ -206,9 +214,10 @@
             // 
             // Arc_BTT
             // 
-            this.Arc_BTT.Location = new System.Drawing.Point(131, 89);
+            this.Arc_BTT.Location = new System.Drawing.Point(151, 90);
+            this.Arc_BTT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Arc_BTT.Name = "Arc_BTT";
-            this.Arc_BTT.Size = new System.Drawing.Size(94, 51);
+            this.Arc_BTT.Size = new System.Drawing.Size(105, 42);
             this.Arc_BTT.TabIndex = 4;
             this.Arc_BTT.TabStop = false;
             this.Arc_BTT.Text = "Arc";
@@ -217,9 +226,10 @@
             // 
             // CircleF_BTT
             // 
-            this.CircleF_BTT.Location = new System.Drawing.Point(131, 54);
+            this.CircleF_BTT.Location = new System.Drawing.Point(151, 52);
+            this.CircleF_BTT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CircleF_BTT.Name = "CircleF_BTT";
-            this.CircleF_BTT.Size = new System.Drawing.Size(94, 29);
+            this.CircleF_BTT.Size = new System.Drawing.Size(105, 34);
             this.CircleF_BTT.TabIndex = 4;
             this.CircleF_BTT.TabStop = false;
             this.CircleF_BTT.Text = "Filled circle";
@@ -228,9 +238,10 @@
             // 
             // CirceL_BTT
             // 
-            this.CirceL_BTT.Location = new System.Drawing.Point(131, 19);
+            this.CirceL_BTT.Location = new System.Drawing.Point(151, 15);
+            this.CirceL_BTT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CirceL_BTT.Name = "CirceL_BTT";
-            this.CirceL_BTT.Size = new System.Drawing.Size(94, 29);
+            this.CirceL_BTT.Size = new System.Drawing.Size(105, 33);
             this.CirceL_BTT.TabIndex = 4;
             this.CirceL_BTT.TabStop = false;
             this.CirceL_BTT.Text = "Circle";
@@ -239,9 +250,10 @@
             // 
             // RectangleF_BTT
             // 
-            this.RectangleF_BTT.Location = new System.Drawing.Point(18, 181);
+            this.RectangleF_BTT.Location = new System.Drawing.Point(25, 178);
+            this.RectangleF_BTT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RectangleF_BTT.Name = "RectangleF_BTT";
-            this.RectangleF_BTT.Size = new System.Drawing.Size(94, 56);
+            this.RectangleF_BTT.Size = new System.Drawing.Size(107, 45);
             this.RectangleF_BTT.TabIndex = 4;
             this.RectangleF_BTT.TabStop = false;
             this.RectangleF_BTT.Text = "Filled rectangle";
@@ -250,9 +262,10 @@
             // 
             // Rectangle_BTT
             // 
-            this.Rectangle_BTT.Location = new System.Drawing.Point(18, 146);
+            this.Rectangle_BTT.Location = new System.Drawing.Point(25, 136);
+            this.Rectangle_BTT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Rectangle_BTT.Name = "Rectangle_BTT";
-            this.Rectangle_BTT.Size = new System.Drawing.Size(94, 29);
+            this.Rectangle_BTT.Size = new System.Drawing.Size(107, 37);
             this.Rectangle_BTT.TabIndex = 4;
             this.Rectangle_BTT.TabStop = false;
             this.Rectangle_BTT.Text = "Rectangle";
@@ -261,9 +274,10 @@
             // 
             // EllipseF_BTT
             // 
-            this.EllipseF_BTT.Location = new System.Drawing.Point(18, 89);
+            this.EllipseF_BTT.Location = new System.Drawing.Point(25, 90);
+            this.EllipseF_BTT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EllipseF_BTT.Name = "EllipseF_BTT";
-            this.EllipseF_BTT.Size = new System.Drawing.Size(94, 51);
+            this.EllipseF_BTT.Size = new System.Drawing.Size(107, 42);
             this.EllipseF_BTT.TabIndex = 4;
             this.EllipseF_BTT.TabStop = false;
             this.EllipseF_BTT.Text = "Filled ellipse";
@@ -272,9 +286,10 @@
             // 
             // EllipseL_BTT
             // 
-            this.EllipseL_BTT.Location = new System.Drawing.Point(18, 54);
+            this.EllipseL_BTT.Location = new System.Drawing.Point(25, 52);
+            this.EllipseL_BTT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EllipseL_BTT.Name = "EllipseL_BTT";
-            this.EllipseL_BTT.Size = new System.Drawing.Size(94, 29);
+            this.EllipseL_BTT.Size = new System.Drawing.Size(107, 34);
             this.EllipseL_BTT.TabIndex = 4;
             this.EllipseL_BTT.TabStop = false;
             this.EllipseL_BTT.Text = "Ellipse";
@@ -283,9 +298,10 @@
             // 
             // Line_BTT
             // 
-            this.Line_BTT.Location = new System.Drawing.Point(18, 19);
+            this.Line_BTT.Location = new System.Drawing.Point(25, 15);
+            this.Line_BTT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Line_BTT.Name = "Line_BTT";
-            this.Line_BTT.Size = new System.Drawing.Size(94, 29);
+            this.Line_BTT.Size = new System.Drawing.Size(107, 33);
             this.Line_BTT.TabIndex = 4;
             this.Line_BTT.TabStop = false;
             this.Line_BTT.Text = "Line";
@@ -296,9 +312,10 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel2.Controls.Add(this.Cordinate);
-            this.panel2.Location = new System.Drawing.Point(235, 0);
+            this.panel2.Location = new System.Drawing.Point(268, -1);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1081, 707);
+            this.panel2.Size = new System.Drawing.Size(1133, 625);
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.paint);
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MUDW);
@@ -310,20 +327,21 @@
             this.Cordinate.AutoSize = true;
             this.Cordinate.BackColor = System.Drawing.Color.Transparent;
             this.Cordinate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Cordinate.Location = new System.Drawing.Point(964, 684);
+            this.Cordinate.Location = new System.Drawing.Point(1026, 600);
             this.Cordinate.Name = "Cordinate";
-            this.Cordinate.Size = new System.Drawing.Size(50, 20);
+            this.Cordinate.Size = new System.Drawing.Size(44, 16);
             this.Cordinate.TabIndex = 0;
             this.Cordinate.Text = "label4";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1315, 707);
+            this.ClientSize = new System.Drawing.Size(1400, 624);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";

@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml.Linq;
 
 /* Dash Styles
@@ -17,75 +18,75 @@ using System.Xml.Linq;
 public interface Shape
 {
     //Varible Declaration;
-    public float Dx
+    float Dx
     {
         get;
         set;
     }
-    public List<Shape> gshapes
+     List<Shape> gshapes
     {
         get;
         set;
     }
-    public PointF P1
+     PointF P1
     {
         get;
         set;
     }
-    public PointF P2
+     PointF P2
     {
         get;
         set;
     }
-    public int Width
+     int Width
     {
         get;
         set;
     }
-    public Color Color
+     Color Color
     {
         get;
         set;
     }
-    public Pen Pen
+     Pen Pen
     {
 
         get;
         set;
     }
-    public SolidBrush Brush
+     SolidBrush Brush
     {
         get;
         set;
     }
-    public int Style
+     int Style
     {
         get;
         set;
     }
-    public List<PointF> Points
+     List<PointF> Points
     {
         get;
         set;
     }
-    public List<PointF> PointM
+     List<PointF> PointM
     {
         get;
         set;
     }
-    public string Name
+     string Name
     {
         get;
         set;
     }
 
     //Functions
-    public void Paint(PaintEventArgs e);
-    public bool CContains(Panel a, MouseEventArgs e);
-    public void SetPivot();        //Set Pivot,  At i = 0: we save P1,  At i = 1: we save P2
-    public RectangleF GetContains();
-    public void SizeDW();
-    public void SizeUP();
-    public void DrawBox(Panel a, bool flag);
+     void Paint(PaintEventArgs e);
+     bool CContains(Panel a, MouseEventArgs e);
+     void SetPivot();        //Set Pivot,  At i = 0: we save P1,  At i = 1: we save P2
+     RectangleF GetContains();
+     void SizeDW();
+     void SizeUP();
+     void DrawBox(Panel a, bool flag);
 
 }
